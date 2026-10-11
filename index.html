@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nova | Sign In</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="auth-page">
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <main class="auth-shell">
+    <section class="brand-panel">
+      <a class="brand" href="#"><span class="brand-mark">N</span><span>NOVA<span class="brand-dot">.</span></span></a>
+      <div class="brand-copy">
+        <div class="eyebrow"><span class="status-dot"></span> YOUR SPACE, YOUR RULES</div>
+        <h1>Good to see<br>you <span>again.</span></h1>
+        <p>Sign in to continue your journey. Everything you need, in one beautifully simple space.</p>
+      </div>
+      <div class="mini-stats">
+        <div><strong>Secure</strong><small>Demo experience</small></div>
+        <div class="stat-divider"></div>
+        <div><strong>Simple</strong><small>One-click sign out</small></div>
+      </div>
+      <div class="orb orb-a"></div><div class="orb orb-b"></div>
+    </section>
+    <section class="form-panel">
+      <div class="mobile-brand"><span class="brand-mark">N</span> NOVA<span class="brand-dot">.</span></div>
+      <div class="form-heading"><span class="form-tag">WELCOME BACK</span><h2>Sign in</h2><p>Enter your details below to access your account.</p></div>
+      <form id="loginForm" novalidate>
+        <label for="email">Email address</label>
+        <div class="input-wrap"><span class="field-icon">✉</span><input id="email" type="email" placeholder="you@example.com" autocomplete="username" required></div>
+        <label for="password">Password</label>
+        <div class="input-wrap"><span class="field-icon">⌑</span><input id="password" type="password" placeholder="Enter your password" autocomplete="current-password" required><button class="eye-btn" type="button" id="togglePassword" aria-label="Show password">◉</button></div>
+        <div class="form-options"><label class="remember"><input type="checkbox" id="remember"> <span>Remember me</span></label><span class="muted-note">Demo sign-in</span></div>
+        <button class="primary-btn" type="submit"><span>Sign in to account</span><span class="arrow">↗</span></button>
+        <p class="message" id="message" role="status"></p>
+      </form>
+      <div class="demo-box"><span class="demo-icon">✦</span><div><strong>Try the demo</strong><p>Email: <code>demo@nova.dev</code><br>Password: <code>Nova123!</code></p></div><button id="fillDemo" type="button" class="fill-btn">Use demo</button></div>
+      <p class="security-note"><span>⌑</span> This is a front-end demo. Do not use a real password.</p>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

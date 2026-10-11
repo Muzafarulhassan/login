@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nova | Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="dashboard-page">
+  <div class="dash-topbar"><a class="brand" href="dashboard.html"><span class="brand-mark">N</span><span>NOVA<span class="brand-dot">.</span></span></a><div class="top-actions"><span class="online-pill"><i></i> Account active</span><button class="logout-btn" id="logoutBtn">↪ <span>Log out</span></button></div></div>
+  <main class="dashboard-main">
+    <div class="welcome-row"><div><div class="eyebrow"><span class="status-dot"></span> YOUR DASHBOARD</div><h1>Welcome back, <span id="userName">friend</span>.</h1><p>You’re signed in and ready to go. This is your personal space.</p></div><div class="avatar" id="avatar">D</div></div>
+    <section class="dash-grid">
+      <article class="dash-card featured"><div class="card-symbol">✦</div><span class="card-label">YOUR ACCOUNT</span><h2>You're all set.</h2><p>Your demo session is active. Explore the dashboard, then log out whenever you're done.</p><div class="session-line"><span class="status-dot"></span> Signed in successfully</div></article>
+      <article class="dash-card"><div class="card-top"><span class="tile-icon purple">◈</span><span class="tiny-label">PROFILE</span></div><h3 id="profileName">Demo User</h3><p id="profileEmail">demo@nova.dev</p><div class="card-foot">Account details <span>↗</span></div></article>
+      <article class="dash-card"><div class="card-top"><span class="tile-icon cyan">⌑</span><span class="tiny-label">SECURITY</span></div><h3>Session protected</h3><p>This sample uses browser storage, not a real server.</p><div class="card-foot">Demo environment <span>✓</span></div></article>
+    </section>
+    <section class="logout-banner"><div><span class="banner-kicker">ALL DONE FOR NOW?</span><h2>Ready to sign out?</h2><p>You can safely end this demo session at any time.</p></div><button class="primary-btn compact" id="logoutBtnBottom">Log out <span class="arrow">↗</span></button></section>
+    <p class="footer-note">© 2026 NOVA · A clean, modern sign-in experience</p>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
