@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Successful</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        body{
+            background-image:
+            linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.65)),
+            url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1920&q=80");
+
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+        }
+
+        .glass{
+            backdrop-filter: blur(18px);
+            background: rgba(255,255,255,.12);
+            border: 1px solid rgba(255,255,255,.2);
+        }
+
+        @keyframes zoom {
+            0%{transform:scale(.7);opacity:0;}
+            100%{transform:scale(1);opacity:1;}
+        }
+
+        .card{
+            animation: zoom .8s ease;
+        }
+    </style>
+</head>
+<body class="flex justify-center items-center">
+
+<div class="glass card w-[450px] p-10 rounded-3xl shadow-2xl text-center">
+
+    <div class="w-24 h-24 mx-auto rounded-full bg-green-500 flex items-center justify-center text-5xl mb-6 shadow-lg">
+        ✅
+    </div>
+
+    <h1 class="text-4xl font-bold text-green-400 mb-4">
+        Registration Successful!
+    </h1>
+
+    <p class="text-gray-200 text-lg leading-8">
+        🎉 Congratulations!<br>
+        Your account has been created successfully.<br>
+        Welcome to our Premium Car Club.
+    </p>
+
+    <div class="mt-8 flex gap-4 justify-center">
+
+        <a href="/login"
+        class="bg-green-500 hover:bg-green-600 px-6 py-3 rounded-xl text-white font-bold transition">
+            Login Now
+        </a>
+
+        <a href="/"
+        class="bg-gray-700 hover:bg-gray-800 px-6 py-3 rounded-xl text-white font-bold transition">
+            Home
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+</html>

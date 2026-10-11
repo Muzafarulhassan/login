@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Login</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<style>
+.back-login-btn{
+    position: relative;
+    width: 100%;
+    padding: 16px;
+    border: none;
+    border-radius: 16px;
+    overflow: hidden;
+    cursor: pointer;
+
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+
+    background: linear-gradient(
+        270deg,
+        #dc2626,
+        #ef4444,
+        #ec4899,
+        #8b5cf6,
+        #2563eb,
+        #dc2626
+    );
+
+    background-size: 500% 500%;
+    animation: movingGradient 6s ease infinite;
+
+    box-shadow: 0 0 25px rgba(239,68,68,.45);
+    transition: all .35s ease;
+}
+
+.back-login-btn:hover{
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 0 40px rgba(239,68,68,.8);
+}
+
+.back-login-btn:active{
+    transform: scale(.96);
+}
+
+.back-login-btn .btn-text{
+    position: relative;
+    z-index: 2;
+}
+
+.back-login-btn .shine{
+    position: absolute;
+    top: 0;
+    left: -130%;
+    width: 35%;
+    height: 100%;
+    background: rgba(255,255,255,.35);
+    transform: skewX(-25deg);
+    animation: shine 2.5s linear infinite;
+}
+
+@keyframes movingGradient{
+    0%{
+        background-position:0% 50%;
+    }
+    50%{
+        background-position:100% 50%;
+    }
+    100%{
+        background-position:0% 50%;
+    }
+}
+
+@keyframes shine{
+    0%{
+        left:-130%;
+    }
+    100%{
+        left:140%;
+    }
+}
+</style>
+<body class="min-h-screen flex items-center justify-center overflow-hidden bg-black">
+
+    <div class="absolute inset-0">
+        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1920"
+            class="w-full h-full object-cover">
+
+        <div class="absolute inset-0 bg-black/75"></div>
+
+        <div class="absolute top-20 left-20 w-72 h-72 bg-red-600 rounded-full blur-[150px] opacity-30 animate-pulse"></div>
+
+        <div class="absolute bottom-20 right-20 w-80 h-80 bg-red-500 rounded-full blur-[180px] opacity-20 animate-pulse"></div>
+    </div>
+
+    <div class="relative w-[420px] rounded-3xl bg-white/10 backdrop-blur-xl border border-white/20 shadow-[0_0_40px_rgba(255,0,0,0.3)] p-8">
+
+        <div class="flex justify-center mb-6">
+            <div class="w-20 h-20 rounded-full bg-red-600 flex items-center justify-center text-white text-4xl shadow-lg shadow-red-600/50">
+                🚗
+            </div>
+        </div>
+
+        <h1 class="text-3xl text-center font-bold text-white">
+            Login Error
+        </h1>
+
+        <p class="text-center text-gray-300 mt-2 mb-8">
+            Request to Login Failed! Please  try again.
+        </p>
+
+
+
+        <button class="back-login-btn" onclick="window.location.href='/login'">
+            <span class="shine"></span>
+                <span class="btn-text">
+                🔙 Back To Login
+                </span>
+        </button>
+
+        
+
+    </div>
+
+</body>
+</html>

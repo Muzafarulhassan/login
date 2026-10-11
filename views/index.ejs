@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* Background Animation */
+body{
+    background-image:url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1920&q=80');
+    background-size:cover;
+    background-position:center;
+    animation:bgZoom 4s ease-in-out infinite alternate;
+    overflow:hidden;
+}
+
+@keyframes bgZoom{
+    from{
+        background-size:100%;
+    }
+    to{
+        background-size:110%;
+    }
+}
+
+
+/* Moving Light */
+body::after{
+    content:"";
+    position:fixed;
+    top:0;
+    left:-120%;
+    width:50%;
+    height:100%;
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.12),
+        transparent
+    );
+}
+
+@keyframes lightMove{
+    100%{
+        left:140%;
+    }
+}
+
+.glass-card{
+    position:relative;
+    z-index:10;
+    width:400px;
+    padding:32px;
+    border-radius:22px;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,.2);
+    box-shadow:0 25px 60px rgba(0,0,0,.5);
+}
+
+@keyframes floatCard{
+    0%,100%{
+        transform:translateY(0px);
+    }
+    50%{
+        transform:translateY(-10px);
+    }
+}
+
+/* Heading */
+.title{
+    color:#ff1744;
+    animation:titleGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes titleGlow{
+    from{
+        text-shadow:0 0 10px red;
+    }
+    to{
+        text-shadow:0 0 25px red,
+                    0 0 45px deeppink;
+    }
+}
+
+
+/* Button */
+.animated-btn{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:12px;
+    font-size:18px;
+    color:#fff;
+    background:linear-gradient(
+        270deg,
+        #000000,
+        #ff0080,
+        #ff0000,
+        #ff8c00,
+        #ff0080,
+        #000000
+    );
+    background-size:500% 500%;
+    animation:gradientMove 6s ease infinite;
+    transition:.3s;
+    box-shadow:0 0 20px rgba(255,0,80,.5);
+    position:relative;
+    overflow:hidden;
+}
+
+.animated-btn:hover{
+    box-shadow:0 0 35px rgba(255,0,80,.9);
+}
+
+.animated-btn:active{
+    transform:scale(.95);
+}
+
+.animated-btn::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-120%;
+    width:40%;
+    height:100%;
+    background:rgba(255,255,255,.3);
+    transform:skewX(-25deg);
+}
+
+@keyframes shine{
+    100%{
+        left:150%;
+    }
+}
+
+@keyframes gradientMove{
+    0%{
+        background-position:0% 50%;
+    }
+    50%{
+        background-position:100% 50%;
+    }
+    100%{
+        background-position:0% 50%;
+    }
+}
+
+    </style>
+
+</head>
+
+<body class="min-h-screen flex items-center justify-center">
+
+<form action="/register" method="POST" class="glass-card w-[430px]">
+
+    <h1 class="text-3xl font-bold text-center mb-8 title">
+         Create Account
+    </h1>
+
+    <div class="flex flex-col gap-2 ml-3">
+
+        <input
+            type="text"
+            name="username"
+            placeholder="Username"
+            required
+            class="w-full h-14 m-3 px-5 rounded-xl bg-white/20 border border-white/20 text-white text-lg placeholder-gray-300 outline-none focus:border-pink-500  focus:ring-pink-500 transition-all duration-300">
+
+        <input
+            type="text"
+            name="name"
+            placeholder="Name"
+            required
+            class="w-full h-14 m-3 px-5 rounded-xl bg-white/20 border border-white/20 text-white text-lg placeholder-gray-300 outline-none focus:border-pink-500 focus:ring-2 focus:ring-pink-500 transition-all duration-300">
+
+        <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            required
+            class="w-full h-14 m-3 px-5 rounded-xl bg-white/20 border border-white/20 text-white text-lg placeholder-gray-300 outline-none focus:border-pink-500 focus:ring-2 focus:ring-pink-500 transition-all duration-300">
+          
+
+        <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            required
+            class="w-full h-14 m-3 px-5 rounded-xl bg-white/20 border border-white/20 text-white text-lg placeholder-gray-300 outline-none focus:border-pink-500 focus:ring-2 focus:ring-pink-500 transition-all duration-300">
+
+        <input
+            type="number"
+            name="age"
+            placeholder="Age"
+            required
+            class="w-full h-14 m-3 px-5 rounded-xl bg-white/20 border border-white/20 text-white text-lg placeholder-gray-300 outline-none focus:border-pink-500 focus:ring-1focus:ring-pink-500 transition-all duration-300">
+        
+        <button type="submit" class="animated-btn mt-2">
+            🚀 Create Account
+        </button>
+
+    </div>
+
+</form>
+
+</body>
+</html>

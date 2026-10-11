@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Login</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+body{
+    background: url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1920&q=80");
+    background-size: cover;
+    background-position: center;
+}    .overlay{
+            background: rgba(0,0,0,.55);
+        }
+
+        .glass{
+            backdrop-filter: blur(18px);
+            background: rgba(255,255,255,.12);
+            border:1px solid rgba(255,255,255,.25);
+        }
+        .login-btn{
+    position: relative;
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 14px;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    overflow: hidden;
+
+    background: linear-gradient(
+        270deg,
+        #ff0000,
+        #ff006a,
+        #8b5cf6,
+        #3b82f6,
+        #ff0000
+    );
+
+    background-size: 400% 400%;
+    animation: gradientAnimation 5s ease infinite;
+
+    box-shadow: 0 0 25px rgba(255,0,85,.45);
+    transition: all .35s ease;
+}
+
+.login-btn:hover{
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 0 40px rgba(255,0,85,.8);
+}
+
+.login-btn:active{
+    transform: scale(.96);
+}
+
+.shine{
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 40%;
+    height: 100%;
+    background: rgba(255,255,255,.35);
+    transform: skewX(-25deg);
+    animation: shineMove 2.5s linear infinite;
+}
+
+@keyframes gradientAnimation{
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes shineMove{
+    0%{
+        left: -120%;
+    }
+    100%{
+        left: 140%;
+    }
+}
+    </style>
+</head>
+<body>
+
+<div class="overlay min-h-screen flex justify-center items-center">
+
+    <form action="/login" method="POST"
+          class="glass w-[420px] p-10 rounded-3xl shadow-2xl">
+
+        <h1 class="text-4xl font-bold text-white text-center mb-2">
+         Login
+        </h1>
+
+
+        <div class="mb-5">
+            <label class="text-white block mb-2">Email</label>
+
+            <input
+                type="email"
+                name="email"
+                placeholder="Enter your email"
+                class="w-full p-3 rounded-xl bg-white/20 text-white placeholder:text-gray-300 outline-none border border-white/30 focus:border-red-500">
+        </div>
+
+        <div class="mb-6">
+            <label class="text-white block mb-2">Password</label>
+
+            <input
+                type="password"
+                name="password"
+                placeholder="Enter your password"
+                class="w-full p-3 rounded-xl bg-white/20 text-white placeholder:text-gray-300 outline-none border border-white/30 focus:border-red-500">
+        </div>
+
+        <button type="submit" class="login-btn group required">
+        <span class="shine"></span>
+            <span class="relative z-10 flex items-center justify-center gap-2">
+            🔐 Login
+            </span>
+        </button>
+
+        <p class="text-center text-gray-200 mt-6">
+            Don't have an account?
+            <a href="/" class="text-red-400 font-semibold hover:underline">
+                Register
+            </a>
+        </p>
+
+    </form>
+
+</div>
+
+</body>
+</html>
